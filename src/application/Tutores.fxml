@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VentanaTutoresController">
+   <children>
+      <TableView layoutX="67.0" layoutY="84.0" prefHeight="232.0" prefWidth="496.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="Codigo" />
+            <TableColumn prefWidth="85.0" text="Nombre" />
+            <TableColumn prefWidth="111.0" text="Apellido" />
+            <TableColumn prefWidth="75.0" text="DNI" />
+            <TableColumn prefWidth="75.0" text="E-Mail" />
+            <TableColumn prefWidth="75.0" text="Telefono" />
+         </columns>
+      </TableView>
+      <Button fx:id="Modificar" layoutX="164.0" layoutY="327.0" mnemonicParsing="false" onAction="#Modificar" text="Modificar" />
+      <Button fx:id="Anadir" layoutX="425.0" layoutY="327.0" mnemonicParsing="false" onAction="#Anadir" text="Añadir" />
+      <Button fx:id="Volver" layoutX="565.0" layoutY="361.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
+      <Label layoutX="276.0" layoutY="29.0" prefHeight="40.0" prefWidth="79.0" text="TUTORES" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

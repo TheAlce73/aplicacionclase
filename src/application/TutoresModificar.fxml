@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="368.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ModificarTutor">
+   <children>
+      <TextField layoutX="193.0" layoutY="22.0" />
+      <Label layoutX="33.0" layoutY="30.0" prefHeight="17.0" prefWidth="92.0" text="Nombre" />
+      <Label layoutX="33.0" layoutY="80.0" prefHeight="17.0" prefWidth="92.0" text="Apllido" />
+      <TextField layoutX="193.0" layoutY="72.0" />
+      <Button layoutX="135.0" layoutY="264.0" mnemonicParsing="false" text="Modificar Tutor" />
+      <TextField layoutX="193.0" layoutY="172.0" />
+      <Label layoutX="33.0" layoutY="176.0" prefHeight="17.0" prefWidth="92.0" text="E-Mail" />
+      <Label layoutX="33.0" layoutY="126.0" prefHeight="17.0" prefWidth="92.0" text="DNI" />
+      <TextField layoutX="193.0" layoutY="122.0" />
+      <Label layoutX="33.0" layoutY="219.0" prefHeight="17.0" prefWidth="92.0" text="Telefono" />
+      <TextField layoutX="194.0" layoutY="215.0" />
+   </children>
+</AnchorPane>

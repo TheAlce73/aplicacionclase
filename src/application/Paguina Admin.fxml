@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaguinaAdminController">
+   <children>
+      <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" text="Perfil" />
+      <Button fx:id="Tutores" layoutX="412.0" layoutY="111.0" mnemonicParsing="false" onAction="#Tutores" text="TUTORES" />
+      <Button fx:id="Usuarios" layoutX="114.0" layoutY="111.0" mnemonicParsing="false" onAction="#Usuarios" text="USUARIOS" />
+      <Button layoutX="67.0" layoutY="201.0" mnemonicParsing="false" text="F.PROFESIONALES Y CICLOS" />
+      <Button layoutX="409.0" layoutY="284.0" mnemonicParsing="false" text="ALUMNOS" />
+      <Button layoutX="92.0" layoutY="284.0" mnemonicParsing="false" text="GENERAR ANEXOS" />
+      <Button fx:id="n" layoutX="499.0" layoutY="361.0" mnemonicParsing="false" onAction="#CerrarSesion" text="Cerrar Sesión" />
+      <Button fx:id="UsrATuto" layoutX="377.0" layoutY="201.0" mnemonicParsing="false" onAction="#UsuarioATutor" text="USUARIOS A TUTORES" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UsuarioATutor">
+   <children>
+      <Label layoutX="210.0" layoutY="36.0" prefHeight="40.0" prefWidth="181.0" text="USUARIOS A TUTORES" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="81.0" layoutY="84.0" prefHeight="232.0" prefWidth="158.0">
+         <columns>
+            <TableColumn prefWidth="85.0" text="N.Usuario" />
+            <TableColumn prefWidth="75.0" text="Admin" />
+         </columns>
+      </TableView>
+      <TableView layoutX="355.0" layoutY="84.0" prefHeight="232.0" prefWidth="158.0">
+         <columns>
+            <TableColumn prefWidth="85.0" text="Nombre" />
+            <TableColumn prefWidth="75.0" text="Apellidos" />
+         </columns>
+      </TableView>
+      <Button layoutX="258.0" layoutY="337.0" mnemonicParsing="false" text="Dar Permisos" />
+      <Button fx:id="Volver" layoutX="536.0" layoutY="362.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
+   </children>
+</AnchorPane>
