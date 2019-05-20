@@ -2,12 +2,32 @@ package application;
 
 
 
+import Centros.AnadirCentros;
+import Centros.ModificarCentros;
+import Centros.VentanaCentroController;
+import Ciclo.VentanaAnadirCiclo;
+import Ciclo.VentanaCicloController;
+import Ciclo.VentanaModificarCiclo;
+import Conexion.Centros;
+import Conexion.Ciclo;
+import Conexion.FamiliaProfesional;
+import Conexion.Tutores;
+import Conexion.Usuarios;
+import FamiliaProfesional.VentanaAnadirFP;
+import FamiliaProfesional.VentanaFamiliaPController;
+import FamiliaProfesional.VentanaModificarFP;
+import Tutores.AnadirTutor;
+import Tutores.ModificarTutor;
+import Tutores.VentanaTutoresController;
+import UsuariosAdmin.AnadirUsuario;
+import UsuariosAdmin.ModificarUsuario;
 import UsuariosAdmin.VentanaUsuarios;
 import javafx.application.Application;
 
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -99,6 +119,8 @@ public class Main extends Application {
 		
 	}
 	
+	//USUARIOS
+	
 	public void MostrarUsuarios() {
 		try {
 			
@@ -125,8 +147,10 @@ public class Main extends Application {
 	
 	public void MostrarAñadirUsuario() {
 		try {
+			System.out.println("HOla");
 			
-		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("UsuariosAñadir.fxml"));
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../UsuariosAdmin/UsuariosAnadir.fxml"));
+		     System.out.println("HOla");
 	            AnchorPane ventanaDos = (AnchorPane) loader.load();
 	            Stage ventana = new Stage();
 	            ventana.setTitle("Paguina Administrador");
@@ -147,20 +171,20 @@ public class Main extends Application {
 		
 	}
 
-	public void MostrarModificarUsuario() {
+	public void MostrarModificarUsuario(TableView<Usuarios> tabla, Usuarios selectedItem) {
 		try {
 			
-		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("UsuariosModificar.fxml"));
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../UsuariosAdmin/UsuariosModificar.fxml"));
 	            AnchorPane ventanaDos = (AnchorPane) loader.load();
 	            Stage ventana = new Stage();
-	            ventana.setTitle("Paguina Administrador");
+	            ventana.setTitle("Paguina Modificar Usuario");
 
 	            ventana.initOwner(stagePrincipal);
 	            Scene scene = new Scene(ventanaDos);
 	            ventana.setScene(scene);
 
 	            ModificarUsuario controller2 = loader.getController();
-	            controller2.setProgramaInicioSesion(this,ventana);
+	            controller2.setProgramaInicioSesion(this,ventana,tabla, selectedItem);
 
 	            ventana.show();
             
@@ -171,10 +195,12 @@ public class Main extends Application {
 		
 	}
 	
+	//TUTORES
+	
 	public void MostrarVentanaTutores() {
 		try {
 			
-		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("Tutores.fxml"));
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Tutores/Tutores.fxml"));
 	            AnchorPane ventanaDos = (AnchorPane) loader.load();
 	            Stage ventana = new Stage();
 	            ventana.setTitle("Paguina Administrador");
@@ -194,10 +220,10 @@ public class Main extends Application {
 		}
 		
 	}
-	public void MostrarModificarTutores() {
+	public void MostrarModificarTutores(Tutores selectedItem) {
 		try {
 			
-		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("TutoresModificar.fxml"));
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Tutores/TutoresModificar.fxml"));
 	            AnchorPane ventanaDos = (AnchorPane) loader.load();
 	            Stage ventana = new Stage();
 	            ventana.setTitle("Paguina Administrador");
@@ -207,7 +233,7 @@ public class Main extends Application {
 	            ventana.setScene(scene);
 
 	            ModificarTutor controller2 = loader.getController();
-	            controller2.setProgramaInicioSesion(this,ventana);
+	            controller2.setProgramaInicioSesion(this,ventana,selectedItem);
 
 	            ventana.show();
             
@@ -220,7 +246,7 @@ public class Main extends Application {
 	public void MostrarAnadirTutores() {
 		try {
 			
-		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("TutoresAñadir.fxml"));
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Tutores/TutoresAnadir.fxml"));
 	            AnchorPane ventanaDos = (AnchorPane) loader.load();
 	            Stage ventana = new Stage();
 	            ventana.setTitle("Paguina Administrador");
@@ -264,5 +290,225 @@ public class Main extends Application {
 		}
 		
 	}
+	
+	//CENTROS
+	
+	public void MostrarVentanaCentro() {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Centros/Centros.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
 
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaCentroController controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	public void MostrarAnadirCentros() {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Centros/CentrosAnadir.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            AnadirCentros controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	
+	public void MostrarModificarCentros(Centros selectedItem) {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Centros/CentrosModificar.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            ModificarCentros controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana,selectedItem);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	
+	//FP
+	
+	public void MostrarVentanaFamiliaProfesional() {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../FamiliaProfesional/FamiliaProfesional.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaFamiliaPController controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	
+	public void MostrarAnadirFP() {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../FamiliaProfesional/AnadirFP.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaAnadirFP controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	
+	public void MostrarModificarFP(FamiliaProfesional selectedItem) {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../FamiliaProfesional/ModificarFP.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaModificarFP controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana,selectedItem);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	
+	//CICLOS
+	
+	public void MostrarVentanaCiclos() {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Ciclo/Ciclo.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaCicloController controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+
+	public void MostrarAnadirCiclo() {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Ciclo/AnadirCiclo.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaAnadirCiclo controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+
+	}
+	
+	public void MostrarModificarCiclo(Ciclo selectedItem) {
+		try {
+			
+		     FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Ciclo/ModificarCiclo.fxml"));
+	            AnchorPane ventanaDos = (AnchorPane) loader.load();
+	            Stage ventana = new Stage();
+	            ventana.setTitle("Paguina Administrador");
+
+	            ventana.initOwner(stagePrincipal);
+	            Scene scene = new Scene(ventanaDos);
+	            ventana.setScene(scene);
+
+	            VentanaModificarCiclo controller2 = loader.getController();
+	            controller2.setProgramaInicioSesion(this,ventana,selectedItem);
+
+	            ventana.show();
+            
+           } catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
 }

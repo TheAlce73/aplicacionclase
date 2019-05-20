@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FamiliaProfesional.VentanaFamiliaPController">
+   <children>
+      <TableView fx:id="Tabla" layoutX="171.0" layoutY="45.0" prefHeight="200.0" prefWidth="258.0">
+        <columns>
+          <TableColumn fx:id="ColClaveFP" prefWidth="128.0" text="Clave FP" />
+          <TableColumn fx:id="ColNombre" prefWidth="129.0" text="Nombre" />
+        </columns>
+      </TableView>
+      <Button fx:id="Volver" layoutX="536.0" layoutY="301.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
+      <Button fx:id="Modificar" layoutX="129.0" layoutY="288.0" mnemonicParsing="false" onAction="#Modificar" text="Modificar" />
+      <Button fx:id="Anadir" layoutX="390.0" layoutY="288.0" mnemonicParsing="false" onAction="#Anadir" text="Añadir" />
+   </children>
+</AnchorPane>

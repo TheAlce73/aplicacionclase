@@ -33,6 +33,11 @@ public class PaguinaAdminController {
 	@FXML
 	private Button Anexos;
 	
+	@FXML
+	private Button Centros;
+	
+	@FXML
+	private Button Ciclos;
 	
 	
 	public void setProgramaInicioSesion(Main Programa ,Stage ventana) {
@@ -61,6 +66,11 @@ public class PaguinaAdminController {
    	
     }
     
+    public void Centros() {
+    	ventana.close();
+    	this.ProgramaSecundario.MostrarVentanaCentro();
+    }
+    
     public void UsuarioATutor() {
     	ventana.close();
     	this.ProgramaSecundario.MostrarUsuarioATutores();
@@ -69,6 +79,13 @@ public class PaguinaAdminController {
     
     public void FP() {
     	ventana.close();
+    	this.ProgramaSecundario.MostrarVentanaFamiliaProfesional();
+    	
+    }
+    
+    public void Ciclos() {
+    	ventana.close();
+    	this.ProgramaSecundario.MostrarVentanaCiclos();
     	
     }
     public void Anexos() {

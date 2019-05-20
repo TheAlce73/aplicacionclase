@@ -5,4 +5,4 @@
  * @author USUARIO
  *
  */
-package UsuariosAdmin;
+package Centros;

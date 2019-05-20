@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Centros.VentanaCentroController">
+   <children>
+      <Label layoutX="422.0" layoutY="33.0" prefHeight="40.0" prefWidth="80.0" text="CENTROS" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="Volver" layoutX="818.0" layoutY="486.0" mnemonicParsing="false" onAction="#Volver" prefHeight="25.0" prefWidth="92.0" text="Volver" />
+      <Button fx:id="Anadir" layoutX="523.0" layoutY="455.0" mnemonicParsing="false" onAction="#Anadir" prefHeight="25.0" prefWidth="208.0" text="Añadir" />
+      <Button fx:id="Modificar" layoutX="197.0" layoutY="461.0" mnemonicParsing="false" onAction="#Modificar" prefHeight="25.0" prefWidth="172.0" text="Modificar" />
+      <TableView fx:id="tabla" layoutX="23.0" layoutY="86.0" onSort="#initialize" prefHeight="337.0" prefWidth="878.0">
+         <columns>
+            <TableColumn fx:id="ColCodigoCentro" prefWidth="115.0" text="Codigo" />
+            <TableColumn fx:id="ColNombreCentro" prefWidth="78.0" text="Nombre" />
+            <TableColumn fx:id="ColDirectorCentro" prefWidth="78.0" text="Director" />
+            <TableColumn fx:id="ColNIFDirector" prefWidth="75.0" text="NIFDirector" />
+            <TableColumn fx:id="ColTelefonoC" prefWidth="75.0" text="TelefonoCentro" />
+            <TableColumn fx:id="ColCiudad" prefWidth="75.0" text="Ciudad" />
+            <TableColumn fx:id="ColProvincia" prefWidth="75.0" text="Provincia" />
+            <TableColumn fx:id="ColDirecion" prefWidth="75.0" text="Direcion" />
+            <TableColumn fx:id="ColCP" prefWidth="75.0" text="CP" />
+            <TableColumn fx:id="ColFAX" prefWidth="75.0" text="FAX" />
+            <TableColumn fx:id="ColDAT" prefWidth="81.0" text="DAT" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

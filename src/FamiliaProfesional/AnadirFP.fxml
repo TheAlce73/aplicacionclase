@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FamiliaProfesional.VentanaAnadirFP">
+   <children>
+      <Button fx:id="Anadir" layoutX="99.0" layoutY="87.0" mnemonicParsing="false" onAction="#anadirTutor" prefHeight="28.0" prefWidth="98.0" text="Añadir" />
+      <TextField fx:id="Nombre" layoutX="132.0" layoutY="33.0" />
+      <Label layoutX="46.0" layoutY="37.0" text="NombreFP" />
+   </children>
+</AnchorPane>

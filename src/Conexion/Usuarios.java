@@ -14,11 +14,11 @@ public class Usuarios {
 		Admin = admin;
 	}
 
-	public Integer getCo_Usuario() {
+	public Integer getCod_Usuario() {
 		return Cod_Usuario;
 	}
 
-	public void setCo_Usuario(Integer co_Usuario) {
+	public void setCod_Usuario(Integer co_Usuario) {
 		Cod_Usuario = co_Usuario;
 	}
 

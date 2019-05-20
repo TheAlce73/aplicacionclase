@@ -6,16 +6,16 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VentanaTutoresController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tutores.VentanaTutoresController">
    <children>
-      <TableView layoutX="67.0" layoutY="84.0" prefHeight="232.0" prefWidth="496.0">
+      <TableView fx:id="Tabla" layoutX="67.0" layoutY="84.0" onSort="#initialize" prefHeight="232.0" prefWidth="496.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Codigo" />
-            <TableColumn prefWidth="85.0" text="Nombre" />
-            <TableColumn prefWidth="111.0" text="Apellido" />
-            <TableColumn prefWidth="75.0" text="DNI" />
-            <TableColumn prefWidth="75.0" text="E-Mail" />
-            <TableColumn prefWidth="75.0" text="Telefono" />
+            <TableColumn fx:id="ColCod_Tutor" prefWidth="75.0" text="Codigo" />
+            <TableColumn fx:id="ColNombre_Tutor" prefWidth="85.0" text="Nombre" />
+            <TableColumn fx:id="ColApellido_Tutor" prefWidth="111.0" text="Apellido" />
+            <TableColumn fx:id="ColDNI" prefWidth="75.0" text="DNI" />
+            <TableColumn fx:id="ColEmail" prefWidth="75.0" text="E-Mail" />
+            <TableColumn fx:id="ColNumero" prefWidth="75.0" text="Telefono" />
          </columns>
       </TableView>
       <Button fx:id="Modificar" layoutX="164.0" layoutY="327.0" mnemonicParsing="false" onAction="#Modificar" text="Modificar" />

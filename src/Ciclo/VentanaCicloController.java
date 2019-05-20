@@ -1,10 +1,9 @@
-package UsuariosAdmin;
+package Ciclo;
 
-import java.util.Collections;
-import java.util.Comparator;
-
+import Conexion.Ciclo;
+import Conexion.FamiliaProfesional;
 import Conexion.TestConexion;
-import Conexion.Usuarios;
+import Conexion.Tutores;
 import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,29 +14,29 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class VentanaUsuarios {
-	
+public class VentanaCicloController {
+
 	private Main ProgramaSecundario;
 	
 
 	private Stage ventana;
 	
 	@FXML
-	private TableView<Usuarios> Tabla;
+	private TableView<Ciclo> Tabla;
 
 	@FXML
-	private TableColumn<Usuarios,Integer> ColCod_User;
+	private TableColumn<Ciclo,Integer> ColCodigo;
 
 	@FXML
-	private TableColumn<Usuarios,String> ColNombre_User;
+	private TableColumn<Ciclo,String> ColNombre;
 	
 	@FXML
-	private TableColumn<Usuarios,String> ColContrasena;
-
-	@FXML
-	private TableColumn<Usuarios,String> ColAdmin;
+	private TableColumn<Ciclo,String> ColTipo;
 	
-	private final ObservableList<Usuarios> data = FXCollections.observableArrayList();
+	@FXML
+	private TableColumn<Ciclo,String> ColProgramaFormativo;
+	
+
 	
 	@FXML
 	private Button Volver;
@@ -48,20 +47,26 @@ public class VentanaUsuarios {
 	@FXML
 	private Button Anadir;
 	
+	private  ObservableList<Ciclo> data = FXCollections.observableArrayList();
+	
 	public void setProgramaInicioSesion(Main Programa ,Stage ventana) {
 		this.setProgramaSecundario(Programa);
 		this.setVentana(ventana);
 	}
 
 	public void initialize() {
-		ColCod_User.setCellValueFactory(new PropertyValueFactory<Usuarios,Integer>("Cod_Usuario"));
-		ColNombre_User.setCellValueFactory(new PropertyValueFactory<Usuarios,String>("NombreUser"));
-		ColContrasena.setCellValueFactory(new PropertyValueFactory<Usuarios,String>("Contraseña"));
-		ColAdmin.setCellValueFactory(new PropertyValueFactory<Usuarios,String>("Admin"));
-		TestConexion uno=new TestConexion();
-		data.addAll(uno.MostrarUsuario());
-		Tabla.setItems(uno.MostrarUsuario());
 		
+		ColCodigo.setCellValueFactory(new PropertyValueFactory<Ciclo,Integer>("Cod_Ciclo"));
+		ColNombre.setCellValueFactory(new PropertyValueFactory<Ciclo,String>("Tipo"));
+		ColTipo.setCellValueFactory(new PropertyValueFactory<Ciclo,String>("NombreC"));
+		ColProgramaFormativo.setCellValueFactory(new PropertyValueFactory<Ciclo,String>("ProgramaFormativo"));
+		
+
+		
+		TestConexion uno=new TestConexion();
+		data=uno.MostrarCiclo();
+		Tabla.setItems(data);
+
     }
 	
 	public Stage getVentana() {
@@ -87,17 +92,15 @@ public class VentanaUsuarios {
 	    	
 	    }
 	 public void Modificar() {
-		 Usuarios selectedItem=Tabla.getSelectionModel().getSelectedItem();
+		 Ciclo selectedItem=Tabla.getSelectionModel().getSelectedItem();
 		 if(selectedItem!=null) {
 			 
-	    	this.ProgramaSecundario.MostrarModificarUsuario(Tabla,selectedItem);
+			 this.ProgramaSecundario.MostrarModificarCiclo(selectedItem);
 		 }
-		 
-	    }
-	 public void Anadir() {
-	    	this.ProgramaSecundario.MostrarAñadirUsuario();;
 	    	
 	    }
-
-
+	 public void Anadir() {
+	    	this.ProgramaSecundario.MostrarAnadirCiclo();;
+	    	
+	    }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ciclo.VentanaCicloController">
+   <children>
+      <TableView fx:id="Tabla" layoutX="67.0" layoutY="84.0" prefHeight="232.0" prefWidth="496.0">
+         <columns>
+            <TableColumn fx:id="ColCodigo" prefWidth="93.0" text="Codigo" />
+            <TableColumn fx:id="ColNombre" prefWidth="118.0" text="Nombre" />
+            <TableColumn fx:id="ColTipo" prefWidth="101.0" text="Tipo" />
+            <TableColumn fx:id="ColProgramaFormativo" prefWidth="183.0" text="ProgramaFormativo" />
+         </columns>
+      </TableView>
+      <Button fx:id="Modificar" layoutX="164.0" layoutY="327.0" mnemonicParsing="false" onAction="#Modificar" text="Modificar" />
+      <Button fx:id="Anadir" layoutX="425.0" layoutY="327.0" mnemonicParsing="false" onAction="#Anadir" text="Añadir" />
+      <Button fx:id="Volver" layoutX="565.0" layoutY="361.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
+      <Label layoutX="275.0" layoutY="24.0" prefHeight="40.0" prefWidth="79.0" text="CICLOS" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
